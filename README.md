@@ -1,24 +1,56 @@
-# README
+<<<<<<< Updated upstream
+# users テーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Colum              | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |  
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| nickname           | string | null: false               |
+| profile            | text   | null: false               |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :tweets
+- has_many :comments
+- has_many :likes
 
-* System dependencies
 
-* Configuration
+## tweets テーブル
 
-* Database creation
+| Colum              | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |  
+| user               | references | null: false, foreign_key: true |
+| text               | text       | null: false                    |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :comments
+- has_many :likes
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## comments テーブル
 
-* ...
+| Colum              | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |  
+| tweet              | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
+| text               | text       | null: false                    |
+
+### Association
+
+- belongs_to :tweet
+- belongs_to :user
+
+
+## likes テーブル
+
+| Colum              | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |  
+| tweet              | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :tweet
+- belongs_to :user
