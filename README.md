@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 # users テーブル
 
 | Colum              | Type   | Options                   |
