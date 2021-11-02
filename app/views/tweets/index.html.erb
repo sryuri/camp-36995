@@ -33,12 +33,10 @@
          <strong>Album</strong>
         </a>
         <div class="user_nav bg-light bg-dark">
+            <%= link_to "ログイン", "new_user_session_path", class: "post" %>
+            <%= link_to "新規登録", "new_user_registration_path", class: "post" %>
             <%= link_to "マイページ","#" %>
             <%= link_to "ログアウト","#", method: :delete %>
-            <%= link_to "投稿する", "#", class: "post" %>
-            <%= link_to "ログイン", new_user_session_path, class: "post" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-            <%= link_to "投稿する", "#", class: "post" %>
         </div>
       </div>
      </div>
