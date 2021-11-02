@@ -33,10 +33,10 @@
          <strong>Album</strong>
         </a>
         <div class="user_nav bg-light bg-dark">
-            <%= link_to "ログイン", "new_user_session_path", class: "post" %>
-            <%= link_to "新規登録", "new_user_registration_path", class: "post" %>
-            <%= link_to "マイページ","#" %>
-            <%= link_to "ログアウト","#", method: :delete %>
+            <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-secondary" %>
+            <%= link_to "マイページ","#", class: "btn btn-outline-secondary" %>
+            <%= link_to "ログアウト","#", class: "btn btn-outline-secondary", method: :delete %>
         </div>
       </div>
      </div>
@@ -55,6 +55,23 @@
       </div>
      </div>
     </section>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-danger">Danger</button>
+    </div>
+    <div class="col-6">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+    <div class="col">
+      Column
+    </div>
+  </div>
+</div>
 
   <div class="album py-5 bg-light">
     <div class="container">
