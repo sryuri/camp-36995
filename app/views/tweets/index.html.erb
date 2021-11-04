@@ -43,7 +43,7 @@
       </a>
       <div class="user_nav bg-light bg-dark">
       <% if user_signed_in? %>
-    　  <div class="nav__right"> 
+       <div class="nav__right"> 
           <%= link_to "マイページ","#", class: "btn btn-outline-secondary" %>
           <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-secondary", method: :delete %>
       </div> 
