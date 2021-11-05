@@ -1,0 +1,42 @@
+<div class="tweets-contents">
+
+  <div class="tweets-main">
+    <h2 class="title">Post a image</h2>
+    <%= form_with model: @item, local: true do |f| %>
+  
+    
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        image
+      </div>
+      <div class="click-upload">
+        <%= f.file_field :image, id:"teet-image" %>
+      </div>
+    </div>
+  
+    
+    <div class="tweet">
+      <div class="weight-bold-text">
+        category
+      </div>
+      <%= f.text_area :name, class:"tweets-textbox", id:"item-name", maxlength:"40" %>
+      <div class="tweet_text">
+        <div class="weight-bold-text">
+          text
+        </div>
+        <%= f.text_area :text, class:"tweets-textbox", id:"item-info", rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+   
+    <div  class="text-center container">
+      <div class="d-grid col-6 mx-auto">
+        <%= f.submit "Post", class:"btn btn-secondary" %>
+      </div>
+      <div  class="text-center container">
+        <%=link_to 'TOP', root_path, class:"btn btn-link mt-3 text white"%>
+      </div>  
+    </div>  
+    <% end %>
+  </div>
+</div>
