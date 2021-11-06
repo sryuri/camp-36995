@@ -1,0 +1,38 @@
+<div class="tweets-contents">
+  <div class="tweets-main">
+  
+    <div class="album py-5">
+      <div class="container">
+     
+        <div class="col">
+          <div class="card shadow-sm">
+          <%="by #{@tweet.user.nickname}"%> 
+            <%= image_tag @tweet.image %>                      
+            <div class="card-body">
+              <%= @tweet.text %>  
+            </div>
+          </div> 
+        </div> 
+
+
+<!-- 投稿 -->   
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label mt-3">comments</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div> 
+ <!-- 投稿 -->   
+    <div class="d-grid col-6 mx-auto">
+       <button type="button" class="btn btn-light">post</button>
+    </div>
+
+
+      
+      </div>
+    </div>
+
+    <div class="text-center container">
+        <%=link_to 'Back', root_path, class:"btn btn-link mt-1"%>
+    </div>  
+  
+  </div>
+</div>
