@@ -56,22 +56,30 @@
       </div>
     </div>
   </div>
-  </header>
-  <!-- 検索ボタン、タイトル -->
+  </header> 
+  <!-- title、検索ボタン、多階層カテゴリー-->
   <main> 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">title</h1>
-        <p class="lead text-muted">txttexttexttextextte</p>
-        
-        <%= link_to "Post a photo", new_tweet_path, class: "btn btn-outline-secondary" %> 
+        <h1 class="fw-light">title</h1>      
+        <%= link_to "Post a photo", new_tweet_path, class: "btn btn-outline-secondary mt-4" %> 
+
+      <p>
+      <button class="btn btn-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown button
+      </button>
+      <button class="btn btn-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown button
+     </button>
+     </p> 
         
       </div>
     </div>
   </section>
+  <!-- title、検索ボタン、多階層カテゴリー-->
 
-  <!-- 投稿 -->
+  <!-- 投稿一覧表示 -->
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-4">
@@ -90,7 +98,7 @@
     </div>
   </div>
   </main>
-  <!-- 投稿 -->
+  <!-- 投稿一覧表示 -->
 
   <footer class="text-muted py-5">
   <div class="container">
