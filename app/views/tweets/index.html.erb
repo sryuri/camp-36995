@@ -73,7 +73,7 @@
         Dropdown button
      </button>
      </p> 
-        
+    
       </div>
     </div>
   </section>
@@ -87,9 +87,8 @@
       <% @tweets.each do |tweet| %>
         <div class="col">
           <div class="card shadow-sm">
-            <%= link_to image_tag(tweet.image), tweet_path(tweet.id) %>
-              
-              <%="by #{tweet.user.nickname}"%>       
+           <%= link_to image_tag(tweet.image, width: '259px', height: '180px'), tweet_path(tweet.id) %>           
+           <%="by #{tweet.user.nickname}" %>            
           </div> 
         </div>  
       <% end %>
