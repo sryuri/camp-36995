@@ -32,52 +32,31 @@
     </style>
 
   </head>
-  <body>
-    
-  <header>
-  <div class="navbar navbar-dark bg-light shadow-sm">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <%#  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Album</strong> %>
-      </a>
-      <div class="user_nav bg-light ">
-      <% if user_signed_in? %>
-       <div class="nav__right"> 
-          <%= link_to "My Page","#", class: "btn btn-outline-secondary" %>
-          <%= link_to "Log Out", destroy_user_session_path, class: "btn btn-outline-secondary", method: :delete %>
-      </div> 
-      <% else %>
-        <div class="nav__right">  
-          <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-secondary" %>
-          <%= link_to "Create Account", new_user_registration_path, class: "btn btn-outline-secondary" %>
-        </div> 
-      <% end %>
-      </div>
-    </div>
-  </div>
-  </header> 
-  <!-- title、検索ボタン、多階層カテゴリー-->
-  <main> 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
+  <body>  
+  
+  <!-- TOP画像ー-->
+  <main>
+  <section class="py-5 text-center container top">
+    <div class="row py-lg-5 ">
+      <div class="col-lg-6 col-md-8 mx-auto ">
         <h1 class="fw-light">title</h1>      
         <%= link_to "Post a photo", new_tweet_path, class: "btn btn-outline-secondary mt-4" %> 
-
-      <p>
-      <button class="btn btn-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown button
-      </button>
-      <button class="btn btn-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown button
-     </button>
-     </p> 
-    
+     <!-- 検索ボタンー-->    
+      <div class="align mt-3">
+        <div class="grid">
+        <form action="" method="get" class="search">
+        <div class="form__field">
+          <input type="search" name="search" placeholder="What are you looking for?" class="form__input">
+          <input type="submit" value="Search" class="button">
+        </div>
+        </form>
+        </div>
+      </div>
+     <!-- 検索ボタンー-->
       </div>
     </div>
   </section>
-  <!-- title、検索ボタン、多階層カテゴリー-->
+  <!-- TOP画像ー-->
 
   <!-- 投稿一覧表示 -->
   <div class="album py-5 bg-light">
@@ -99,17 +78,11 @@
   </main>
   <!-- 投稿一覧表示 -->
 
-  <footer class="text-muted py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="/docs/5.1/getting-started/introduction/">getting started guide</a>.</p>
-  </div>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Place sticky footer content here.</span>
+    </div>
   </footer>
-
-    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
       
   </body>
 </html>
