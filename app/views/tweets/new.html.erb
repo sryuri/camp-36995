@@ -15,25 +15,17 @@
     
     <div class="tweet">
         category
-      <p>
-      <button class="btn btn-outline-secondary dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        category_1
-      </button>
-      <button class="btn btn-outline-secondary dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        category_2
-      </button>
-      </p> 
-    
-      
+      <%= f.text_area :category, class:"categories-textbox", maxlength:"50" %> 
+    </div>    
        
-      <div class="tweet_text"> 
-          text
-        <%= f.text_area :text, class:"tweets-textbox mt-2", rows:"7" ,maxlength:"1000" %>
-      </div>
+    <div class="tweet_text"> 
+        text
+      <%= f.text_area :text, class:"tweets-textbox mt-2", rows:"7" ,maxlength:"1000" %>
     </div>
+  
 
    
-    <div  class="text-center container">
+    <div  class="text-center container mt-3">
       <div class="d-grid col-6 mx-auto">
         <%= f.submit "Post", class:"btn btn-secondary" %>
       </div>
