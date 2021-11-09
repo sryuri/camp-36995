@@ -2,7 +2,7 @@
 
   <div class="tweets-main">
     <h2 class="title">Post a photo</h2>
-    <%= form_with model: @tweet, local: true do |f| %>
+    <%= form_with model: @tweet, url: tweets_path, local: true do |f| %>
   
     
     <div class="img-upload">
@@ -14,8 +14,8 @@
   
     
     <div class="tweet">
-        category
-      <%= f.text_area :category, class:"categories-textbox", maxlength:"50" %> 
+        tag
+      <%= f.text_field :name, class:"categories-textbox", maxlength:"50" %> 
     </div>    
        
     <div class="tweet_text"> 
