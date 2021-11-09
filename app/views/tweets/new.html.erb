@@ -6,25 +6,29 @@
   
     
     <div class="img-upload">
-      <div class="weight-bold-text">
         image
-      </div>
       <div class="click-upload">
-        <%= f.file_field :image, id:"tweet-image" %>
+        <%= f.file_field :image, id:"tweet-image "%>
       </div>
     </div>
   
     
     <div class="tweet">
-      <%# <div class="weight-bold-text">
         category
-      </div>
-      <%= f.text_area :category, class:"tweets-textbox", maxlength:"40" %>
-      <div class="tweet_text">
-        <div class="weight-bold-text">
+      <p>
+      <button class="btn btn-outline-secondary dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        category_1
+      </button>
+      <button class="btn btn-outline-secondary dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        category_2
+      </button>
+      </p> 
+    
+      
+       
+      <div class="tweet_text"> 
           text
-        </div>
-        <%= f.text_area :text, class:"tweets-textbox", rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :text, class:"tweets-textbox mt-2", rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
 

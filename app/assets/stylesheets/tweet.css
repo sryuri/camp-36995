@@ -17,8 +17,7 @@
   }
   
   .title {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 20px;
     text-align: center;
   }
   
@@ -37,7 +36,7 @@
   
   .click-upload {
     margin: 15px 0;
-    min-width: 250px;
+    min-width: 700px;
   }
   
   .click-upload>p {
