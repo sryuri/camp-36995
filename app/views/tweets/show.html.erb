@@ -6,9 +6,14 @@
      
         <div class="col">
           <div class="card shadow-sm">
-          <%="by #{@tweet.user.nickname}"%> 
-            <%= image_tag @tweet.image %>                      
+           <%="by #{@tweet.user.nickname}"%>      
+            <%= image_tag @tweet.image %>                     
             <div class="card-body">
+            
+              <%# <%tweet.tags.each do |tag| %>
+             <%#   #<%=tag.name%> 
+            <%#  <%end%>
+ 
               <%= @tweet.text %>  
             </div>
           </div> 
