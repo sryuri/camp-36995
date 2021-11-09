@@ -27,6 +27,8 @@
 - belongs_to :user
 - has_many :comments
 - has_many :likes
+- has_many :tweet_tag_relations
+- has_many :tags, through: :tweet_tag_relations
 
 
 ## comments テーブル
@@ -54,3 +56,28 @@
 
 - belongs_to :tweet
 - belongs_to :user
+
+
+## tags テーブル
+
+| Colum              | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |  
+| name               | string     | null: false, unique: true      |
+
+### Association
+
+- has_many :tweet_tag_relations
+- has_many :tweets, through: :tweet_tag_relations
+
+
+## tweet_tag_relations テーブル
+
+| Colum              | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |  
+| tweet              | references | null: false, foreign_key: true |
+| tag                | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :tweet
+- belongs_to :tag
