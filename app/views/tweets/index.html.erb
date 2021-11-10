@@ -34,7 +34,7 @@
   </head>
   <body>  
   
-  <!-- TOP画像ー-->
+  
   <main>
   <section class="py-5 text-center container top">
     <div class="row py-lg-5 ">
@@ -42,21 +42,22 @@
         <h1 class="fw-light">title</h1>      
         <%= link_to "Post a photo", new_tweet_path, class: "btn btn-outline-secondary mt-4" %> 
      <!-- 検索ボタンー-->    
-      <div class="align mt-3">
+       <div class="align mt-3">
         <div class="grid">
-        <form action="" method="get" class="search">
+          <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search") do |form| %>
         <div class="form__field">
-          <input type="search" name="search" placeholder="What are you looking for?" class="form__input">
-          <input type="submit" value="Search" class="button">
+          <%= form.text_field :name, placeholder: "What are you looking for?", class: "form__input" %>
+          <%= form.submit "Search", class: "button" %>
+        <% end %>  
         </div>
         </form>
         </div>
-      </div>
+      </div> 
      <!-- 検索ボタンー-->
       </div>
     </div>
   </section>
-  <!-- TOP画像ー-->
+  
 
   <!-- 投稿一覧表示 -->
   <div class="album py-5 bg-light">

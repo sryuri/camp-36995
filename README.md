@@ -1,4 +1,10 @@
 
+
+
+
+
+
+
 # users テーブル
 
 | Colum              | Type   | Options                   |

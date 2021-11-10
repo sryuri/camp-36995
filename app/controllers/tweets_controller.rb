@@ -22,7 +22,9 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])   
   end  
 
-
+  def search
+    @tag_search = Tag.tagged_with(params[:name])
+  end
 
 
   private
