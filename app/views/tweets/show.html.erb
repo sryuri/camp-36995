@@ -9,11 +9,12 @@
            <%="by #{@tweet.user.nickname}"%>      
             <%= image_tag @tweet.image %>                     
             <div class="card-body">
-            
-              <%# <%tweet.tags.each do |tag| %>
-             <%#   #<%=tag.name%> 
-            <%#  <%end%>
- 
+            <div class="text-secondary">
+              <%@tweet.tags.each do |tag| %>
+             #<%=tag.name%> 
+            <%end%>
+            </div> 
+            <div class="text mt-4">
               <%= @tweet.text %>  
             </div>
           </div> 
@@ -36,7 +37,7 @@
     </div>
 
     <div class="text-center container">
-        <%=link_to 'Back', root_path, class:"btn btn-link mt-1"%>
+        <%=link_to 'Back', root_path, class:"btn btn-link mt-1 text-secondary"%>
     </div>  
   
   </div>

@@ -68,11 +68,6 @@
           <div class="card shadow-sm">
             <%= link_to image_tag(tweet.image, class: 'img-fluid'), tweet_path(tweet.id) %>          
               <%="by #{tweet.user.nickname}"%> 
-
-              <%tweet.tags.each do |tag| %>
-               #<%=tag.name%>
-              <%end%>
-              
           </div> 
         </div>  
       <% end %>
