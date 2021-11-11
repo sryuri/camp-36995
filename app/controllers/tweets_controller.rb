@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order(created_at: :desc)
   end
 
   def new
@@ -22,9 +22,6 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])   
   end  
 
-  def search
-    @tag_search = Tag.tagged_with(params[:name])
-  end
 
 
   private

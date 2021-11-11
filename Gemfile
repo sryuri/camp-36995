@@ -59,6 +59,6 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
-gem 'ancestry'
-gem 'ransack'
-gem 'acts-as-taggable-on', '~> 6.0'
+gem 'pry-rails'
+
+
