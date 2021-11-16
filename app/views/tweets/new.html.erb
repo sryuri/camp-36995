@@ -1,7 +1,7 @@
 <div class="tweets-contents">
 
-  <div class="tweets-main">
-    <h2 class="title">Post a photo</h2>
+  <div class="tweets-main text-secondary">
+    <h2 class="title" >Post a photo</h2>
     <%= form_with model: @tweet, url: tweets_path, local: true do |f| %>
   
     
@@ -26,7 +26,7 @@
 
    
     <div  class="text-center container mt-3">
-      <div class="d-grid col-6 mx-auto">
+      <div class="d-grid mx-auto">
         <%= f.submit "Post", class:"btn btn-secondary" %>
       </div>
       <div  class="text-center container">

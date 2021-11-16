@@ -66,8 +66,10 @@
       <% @tweets.each do |tweet| %>
         <div class="col">
           <div class="card shadow-sm">
-            <%= link_to image_tag(tweet.image, class: 'img-fluid'), tweet_path(tweet.id) %>          
+            <%= link_to image_tag(tweet.image, class: 'img-fluid'), tweet_path(tweet.id) %>    
+            <div class="text-end text-secondary">      
               <%="by #{tweet.user.nickname}"%> 
+            </div> 
           </div> 
         </div>  
       <% end %>

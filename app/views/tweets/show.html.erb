@@ -1,4 +1,4 @@
-<div class="tweets-contents">
+<div class="tweets-contents ">
   <div class="tweets-main">
   
     <div class="album py-5">
@@ -8,37 +8,46 @@
           <div class="card shadow-sm">
            <%="by #{@tweet.user.nickname}"%>      
             <%= image_tag @tweet.image %>                     
-            <div class="card-body">
-            <div class="text-secondary">
+            <div class="text mt-2">
+              <%= @tweet.text %>  
+            </div>
+            <div class="text-secondary mt-3">
               <%@tweet.tags.each do |tag| %>
              tag : #<%=tag.name%> 
             <%end%>
             </div> 
-            <div class="text mt-4">
-              <%= @tweet.text %>  
-            </div>
           </div> 
         </div> 
 
-
 <!-- コメント投稿 -->   
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label mt-3">comments</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div> 
-<!-- コメント投稿 -->   
-    <div class="d-grid col-6 mx-auto">
-       <button type="button" class="btn btn-light">post</button>
-    </div>
+  <% if user_signed_in? %>
+    <%= form_with model: [@tweet, @comment],local: true do |f|%>  
+      <div class="mt-3">
+        <%= f.text_field :text, placeholder: "Post a comment", id:"exampleFormControlTextarea1", class:"form-control", rows:"3" %>
+      </div>  
+        <div class="d-grid  mx-auto mt-2">
+          <%= f.submit "POST", class:"btn btn-secondary" %>
+        </div>
+    <% end %>
+  <% end %>
 
+<div class="comments">
+  <P>comments</P>
+    <ul class="comments_lists">
+      <% @comments.each do |comment| %>
+        <li class="comments_list">
+            <strong><%= link_to comment.user.nickname, "ser_path(comment.user.id)" %>：</strong>
+            <%= comment.text %>
+        </li>
+      <% end %>
+    </ul>
+</div>      
+<!-- コメント投稿 -->        
 
-      
+       <div class="text-center container">
+          <%=link_to 'Back', root_path, class:"btn btn-link text-secondary"%>
+        </div>    
       </div>
     </div>
-
-    <div class="text-center container">
-        <%=link_to 'Back', root_path, class:"btn btn-link mt-1 text-secondary"%>
-    </div>  
-  
   </div>
 </div>

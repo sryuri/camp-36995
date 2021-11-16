@@ -15,22 +15,20 @@
   <body>
 
   <header>
-  <div class="navbar navbar-dark bg-dark shadow-sm ">
-    <div class="container"> 
-      <div class="user_nav bg-dark">
-      <% if user_signed_in? %>
-       <div class="text-end"> 
+  <div class="navbar navbar-dark bg-dark p-3 text-white">
+  <div class="user_nickname">
+    <%= "Hello," %>
+    <%= link_to "#{current_user.nickname}", "#", class: "text-white" %>
+  </div>
+      <div class="user_nav">
+        <% if user_signed_in? %>
           <%= link_to "My Page","#", class: "btn btn-outline-light" %>
           <%= link_to "Log Out", destroy_user_session_path, class: "btn btn-outline-light", method: :delete %>
-      </div> 
-      <% else %>
-        <div class="text-end">  
+        <% else %>
           <%= link_to "Log In", new_user_session_path, class: "btn btn-outline-light" %>
           <%= link_to "Create Account", new_user_registration_path, class: "btn btn-outline-light" %>
-        </div> 
-      <% end %>
+        <% end %>
       </div>
-    </div>
   </div>
   </header> 
     <%= yield %>
