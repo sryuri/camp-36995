@@ -3,19 +3,26 @@
   
     <div class="album py-5">
       <div class="container">
-     
+        <% if user_signed_in? && current_user.id == @tweet.user_id %>
+        <div class="text-end mb-1">
+          <%= link_to 'edit', edit_tweet_path(@tweet.id), method: :get ,class:"btn btn-outline-secondary btn-sm"%>
+          <%= link_to 'delete', tweet_path(@tweet.id), method: :delete ,class:"btn btn-outline-secondary btn-sm" %>
+        </div> 
+        <% end %>
         <div class="col">
           <div class="card shadow-sm">
-           <%="by #{@tweet.user.nickname}"%>      
+            <div class="text-end">
+             <%="by #{@tweet.user.nickname}"%> 
+            </div>     
             <%= image_tag @tweet.image %>                     
-            <div class="text mt-2">
-              <%= @tweet.text %>  
-            </div>
-            <div class="text-secondary mt-3">
-              <%@tweet.tags.each do |tag| %>
-             tag : #<%=tag.name%> 
-            <%end%>
-            </div> 
+              <div class="text mt-2">
+                <%= @tweet.text %>  
+              </div>
+              <div class="text-secondary mt-3">
+                <%@tweet.tags.each do |tag| %>
+                #<%=tag.name%> 
+                <%end%>
+              </div> 
           </div> 
         </div> 
 
@@ -31,12 +38,11 @@
     <% end %>
   <% end %>
 
-<div class="comments">
-  <P>comments</P>
+<div class="comments text-left">
     <ul class="comments_lists">
       <% @comments.each do |comment| %>
         <li class="comments_list">
-            <strong><%= link_to comment.user.nickname, "ser_path(comment.user.id)" %>：</strong>
+            <%= link_to comment.user.nickname, "user_path(comment.user.id)" %>：
             <%= comment.text %>
         </li>
       <% end %>
