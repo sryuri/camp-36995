@@ -26,11 +26,26 @@ class TweetsController < ApplicationController
 
   def destroy
     tweet = Tweet.find(params[:id])
+    tweet_tag_relation  = TweetTagRelation.find_by(tweet_id: params[:id])
+    tag = Tag.find(tweet_tag_relation.tag_id)
     tweet.destroy
+    tweet_tag_relation.destroy
+    tag.destroy
     redirect_to root_path
   end
 
+  def edit
+    @tweet = Tweet.find(params[:id])
+  end    
 
+  def update
+    @tweet = TweeTag.find(params[:id])
+    if @tweet.update(tweet_params)
+      redirect_to tweet_path
+    else
+       render :edit
+    end
+  end    
 
 
 
