@@ -2,7 +2,36 @@
   <div class="tweets-main text-secondary">
     <h2 class="title" >Edit a photo</h2>
 
-  <%= render partial: "form" %>
+      <%= form_with model: @tweet, url: tweet_path, local: true do |f| %>
+
+    <div class="img-upload">
+      image
+      <div class="click-upload">
+      <%= f.file_field :image, id:"tweet-image "%>
+      </div>
+    </div>
+   
+    <div class="tweet">
+      tag
+      <%= f.text_field :name, class:"categories-textbox", maxlength:"50" %> 
+    </div>    
+       
+    <div class="tweet_text"> 
+      text
+      <%= f.text_area :text, class:"tweets-textbox mt-2", rows:"7" ,maxlength:"1000" %>
+    </div>
+  
+   
+    <div  class="text-center container mt-3">
+      <div class="d-grid mx-auto">
+        <%= f.submit "Post", class:"btn btn-secondary" %>
+      </div>
+      <div  class="text-center container">
+        <%=link_to 'TOP', root_path, class:"btn btn-link mt-3 text-secondary"%>
+      </div>  
+    </div>  
+    <% end %>
+
   
   </div>
 </div>

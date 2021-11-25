@@ -38,10 +38,14 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end    
 
-  def update
-    @tweet = TweeTag.find(params[:id])
-    if @tweet.update(tweet_params)
-      redirect_to tweet_path
+  def update 
+    tweet = Tweet.find(params[:id])
+    tweet_tag_relation  = TweetTagRelation.find_by(tweet_id: params[:id])
+    tag = Tag.find(tweet_tag_relation.tag_id)
+    if  tweet.update(tweet_params)
+        tweet_tag_relation.update(tweet_params)
+        tag.update(tweet_params)
+        redirect_to tweet_path
     else
        render :edit
     end
@@ -52,7 +56,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweets_tag).permit(:text, :image, :name).merge(user_id: current_user.id)
+    params.permit(:text, :image, :name).merge(user_id: current_user.id)
   end
 
 

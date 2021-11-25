@@ -99,7 +99,7 @@ Camper's Breakroom
 - has_many :tweets, through: :tweet_tag_relations
 
 
-## tweet_tag_relations テーブル
+## twe
 
 | Colum              | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |  
