@@ -41,7 +41,7 @@ class TweetsController < ApplicationController
   def update 
     tweet = Tweet.find(params[:id])
     tweet_tag_relation  = TweetTagRelation.find_by(tweet_id: params[:id])
-    tag = Tag.find(tweet_tag_relation.tag_id)
+    tag = Tag.find(tweet_tag_relation.tag_id)  
     if  tweet.update(tweet_params)
         tweet_tag_relation.update(tweet_params)
         tag.update(tweet_params)

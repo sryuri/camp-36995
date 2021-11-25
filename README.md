@@ -92,6 +92,7 @@ Camper's Breakroom
 | Colum              | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |  
 | name               | string     | null: false, unique: true      |
+| user               | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -99,12 +100,13 @@ Camper's Breakroom
 - has_many :tweets, through: :tweet_tag_relations
 
 
-## twe
+## tweet_tag_relations テーブル
 
 | Colum              | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |  
 | tweet              | references | null: false, foreign_key: true |
 | tag                | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 
 ### Association
 
