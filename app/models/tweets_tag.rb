@@ -12,9 +12,9 @@ class TweetsTag
   
     def save
       tweet = Tweet.create(text: text, user_id: user_id, image: image)
-      tag = Tag.create(name: name)
+      tag = Tag.create(name: name, user_id: user_id)
   
-      TweetTagRelation.create(tweet_id: tweet.id, tag_id: tag.id)
+      TweetTagRelation.create(tweet_id: tweet.id, tag_id: tag.id, user_id: user_id)
     end
   
   end
