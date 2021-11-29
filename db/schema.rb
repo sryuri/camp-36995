@@ -84,7 +84,9 @@ ActiveRecord::Schema.define(version: 2021_11_25_024135) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "tags", "users"
   add_foreign_key "tweet_tag_relations", "tags"
   add_foreign_key "tweet_tag_relations", "tweets"
+  add_foreign_key "tweet_tag_relations", "users"
   add_foreign_key "tweets", "users"
 end
